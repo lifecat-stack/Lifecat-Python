@@ -5,7 +5,7 @@ import re
 
 # 请求头--伪装浏览器
 headers = {
-    'Cookie': '_ga=GA1.2.1336089541.1524833580; _gid=GA1.2.337646689.1524833580; is_human=1; sessionid="eyJfbGFuZ3VhZ2UiOiJ6aCJ9:1fC3AJ:QS3tnTkIcsUVpnRM7EkIwDXnLUA"; client_width=677',
+    'Cookie': '',
     'User_Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36'
 }
 
@@ -31,24 +31,28 @@ def getImg(html):
     imgre = re.compile(reg)
     imglist = re.findall(imgre, html.text)
 
-    x = 0
     for imgurl in imglist:
         if len(imgurl) > 100:
             imgurl = None
         else:
-            x += 1
             print(imgurl)
-    print('total:', x)
+    print('过滤前共有total:', len(imglist), 'urls')
     return imglist
 
 
 def img_filter(imgs):
+    """
+    过滤重复图片
+    :param imgs: 本例网站中统一图片url连续出现三次，故逢三取一
+    :return: 过滤后的Urls
+    """
     x = 0
     fimgs = []
     for img in imgs:
         x += 1
         if x % 3 == 0:
             fimgs.append(img)
+    print('过滤后共有total:', len(fimgs), 'urls')
     return fimgs
 
 
@@ -61,7 +65,7 @@ def download(imgurls, count):
     """
     # 下载到本地的目录，需存在
     path = r"D://Python/download/"
-    name = 'page' + count + '_image'
+    name = 'page' + str(count) + '_image'
     x = 0
     for url in imgurls:
         try:
@@ -76,6 +80,7 @@ if __name__ == '__main__':
     从pixabay网站下载图片
         ?q='search框中搜索的关键词'
     """
+    print('不要忘记填写headers中的cookie...')
     word = input("请输入搜索关键词:")
     pages = input("请输入要爬取多少页(1页约100张):")
     # 构建页面循环源
