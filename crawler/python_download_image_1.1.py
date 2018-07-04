@@ -5,8 +5,8 @@ import re
 
 # 请求头--伪装浏览器
 headers = {
-    'Cookie': '',
-    'User_Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36'
+    'Cookie': '_ga=GA1.2.1336089541.1524833580; is_human=1; g_rated=; _gid=GA1.2.1465229331.1530691193; sessionid="eyJfbGFuZ3VhZ2UiOiJ6aCJ9:1facj9:hfXd1l39cUI0NGxyJI75D12dnqU"; client_width=962',
+    'User_Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'
 }
 
 
@@ -64,7 +64,7 @@ def download(imgurls, count):
     :return:
     """
     # 下载到本地的目录，需存在
-    path = r"D://Python/download/"
+    path = r"D:/Python/Python-lifecat/ml_image/face_images/"
     name = 'page' + str(count) + '_image'
     x = 0
     for url in imgurls:
