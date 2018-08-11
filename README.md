@@ -37,7 +37,7 @@ README -- LifeCat Python 机器学习
 
 
 ---------------------------------
-### _[分布式MapReduce脚本](distributed_crawler/README.md)_
+### _[分布式MapReduce脚本](distributed_crawler/zhihu/README.md)_
 
 *****************************************************************************
   #### _@项目分析_
