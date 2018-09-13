@@ -17,7 +17,7 @@ import sys
 from multiprocessing import Pool
 from common import *
 
-from Crawler import Crawler
+from MyObject import Crawler
 from ProxyIP import ProxyIP
 
 # 实例化代理池对象，全局使用，最多实例化进程个数次，防止冗余的实例化
