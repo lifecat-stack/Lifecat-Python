@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Python-lifecat.iml" filepath="$PROJECT_DIR$/.idea/Python-lifecat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Lifecat-Python.iml" filepath="$PROJECT_DIR$/.idea/Lifecat-Python.iml" />
     </modules>
   </component>
 </project>
